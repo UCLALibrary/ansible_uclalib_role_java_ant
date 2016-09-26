@@ -11,8 +11,7 @@ A JDK
 Role Variables
 --------------
 
- * ant_major_version: the major version number of the Ant binary you wish to install, defaults to 3.
- * ant_version: the full version number of the Ant binary you wish to install, defaults to 3.0.5
+ * ant_version: the full version number of the Ant binary you wish to install, defaults to 1.9.7
 
 Dependencies
 ------------
