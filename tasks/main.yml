@@ -1,0 +1,19 @@
+---
+
+- name: Determine if Ant needs to be downloaded/unarchived
+  stat: path=/usr/local/apache-ant-{{ ant_version }}
+  register: ant_path
+
+- name: Download Ant into /usr/local directory
+  get_url: url=http://archive.apache.org/dist/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz dest=/usr/local/apache-ant-{{ ant_version }}-bin.tar.gz
+  when: ant_path.stat.exists == False
+
+- name: Unpack Ant Download
+  unarchive: src=/usr/local/apache-ant-{{ ant_version }}-bin.tar.gz dest=/usr/local copy=no
+  when: ant_path.stat.exists == False
+
+- name: Create symbolic link for the ANT_HOME directory
+  file: src=/usr/local/apache-ant-{{ ant_version }} dest={{ ant_home }} state=link
+
+- name: set up the environment profile for Ant in /etc/profile.d
+  template: src=ant_env.j2 dest="/etc/profile.d/ant.env.sh"

@@ -1,0 +1,6 @@
+---
+# Define the version of Apache Ant to download
+# Will obtain from this URL:
+# http://archive.apache.org/dist/ant/binaries/apache-ant-{{ ant_version }}-bin.tar.gz
+ant_version: 1.9.7
+

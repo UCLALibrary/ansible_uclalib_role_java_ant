@@ -1,0 +1,6 @@
+---
+# role vars for Ant are defined in defaults
+
+# ant_home is used to set both the symlink path for /usr/local/ant as well as the evironment variable
+
+ant_home: "/usr/local/ant"
