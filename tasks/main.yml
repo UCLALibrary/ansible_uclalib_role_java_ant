@@ -17,3 +17,12 @@
 
 - name: set up the environment profile for Ant in /etc/profile.d
   template: src=ant_env.j2 dest="/etc/profile.d/ant.env.sh"
+
+- name: install bash-completion package
+  yum: name=bash-completion state=latest
+
+- name: Copy Ant completion file
+  copy:
+    src: "ant-completion.bash"
+    dest: "/etc/bash_completion.d/ant"
+    mode: 0755
