@@ -1,4 +1,4 @@
-UCLALib Ansible Role: Java: Ant
+UCLALib Ansible Role: Java: Ant [![Build Status](https://travis-ci.org/UCLALibrary/uclalib_role_java_ant.svg?branch=master)](https://travis-ci.org/UCLALibrary/uclalib_role_java_ant)
 =========
 
 Installs Apache Ant, a Java-based software build and deployment tool.
@@ -31,4 +31,3 @@ License
 -------
 
 BSD
-
